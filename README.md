@@ -1,11 +1,39 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# Detroit Tradesmen RFC - Official Website
 
-  <h1>Built with AI Studio</h2>
+This is the official web application for the Detroit Tradesmen Rugby Football Club, Michigan's Premier Men's Rugby Club.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Technical Architecture
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- **Architecture:** Client-Side Rendered SPA (Single Page Application)
+- **Entry Point:** `index.html` -> `index.tsx` -> `App.tsx`
+- **Routing:** Manual state-based routing in `App.tsx` (Simple & Lightweight)
+- **Styling:** Tailwind CSS (configured in `tailwind.config.ts`)
 
-</div>
+## File Structure
+
+- **`/lib`**: 
+  - `types.ts`: **Central Truth**. All TypeScript interfaces (Match, Player, etc.) live here.
+  - `data.ts`: **Content**. Static data arrays that populate the site.
+- **`/components`**:
+  - `layout/`: Global Shell (Header, Footer).
+  - `home/`: Landing page specific sections.
+  - `pages/`: Full page views (Schedule, Roster, etc.).
+  - `shared/`: Reusable UI bricks (Buttons, Cards).
+
+## Getting Started
+
+1. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Run Development Server:**
+   ```bash
+   npm run dev
+   ```
+
+## Branding
+
+- **Colors:** Navy (`#0a0f1c`), Blue (`#3b82f6`), Gold (`#d4a574`).
+- **Typography:** Oswald (Headings), Inter (Body).
