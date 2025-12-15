@@ -71,21 +71,27 @@ export default function Hero({ navigateTo }: HeroProps) {
               <span className="font-display font-bold tracking-[0.2em] uppercase text-blue-400 text-sm shadow-blue-500/50 drop-shadow-sm">Est. 1978</span>
             </div>
             
-            {/* Massive Slogan */}
-            <h1 className="font-display font-black italic text-6xl sm:text-7xl lg:text-[9rem] leading-[0.85] uppercase text-white mb-8 tracking-tighter animate-in slide-in-from-bottom-10 duration-1000 delay-200 drop-shadow-2xl">
-              <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400">FORGED</span>
-              <span className="block pl-2 lg:pl-4">IN DETROIT</span>
+            {/* Massive Slogan - Updated Animation: Heavy Slam */}
+            <h1 className="font-display font-black italic text-6xl sm:text-7xl lg:text-[9rem] leading-[0.85] uppercase text-white mb-8 tracking-tighter drop-shadow-2xl">
+              {/* "BUILT" slams in from Left */}
+              <span className="block text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 animate-in slide-in-from-left-12 duration-700 ease-out fill-mode-backwards">
+                BUILT
+              </span>
+              {/* "IN DETROIT" slams in from Right with delay */}
+              <span className="block pl-2 lg:pl-4 animate-in slide-in-from-right-12 duration-700 delay-200 ease-out fill-mode-backwards">
+                IN DETROIT
+              </span>
             </h1>
             
             {/* Text Overlay Box (Restored) */}
-            <p className="text-gray-200 text-base md:text-xl max-w-xl mb-10 font-light leading-relaxed animate-in fade-in duration-1000 delay-500 border-l-4 border-blue-600 pl-6 bg-[#0a0f1c]/80 backdrop-blur-md py-4 rounded-r-lg border-y border-y-white/5 border-r border-r-white/5 shadow-2xl">
+            <p className="text-gray-200 text-base md:text-xl max-w-xl mb-10 font-light leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500 border-l-4 border-blue-600 pl-6 bg-[#0a0f1c]/80 backdrop-blur-md py-4 rounded-r-lg border-y border-y-white/5 border-r border-r-white/5 shadow-2xl fill-mode-backwards">
               Michigan's Premier Men's Rugby Club. Compete at the highest level, find your brotherhood, and build a legacy.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in duration-1000 delay-700">
+            <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700 fill-mode-backwards">
               <button 
                 onClick={() => navigateTo('join')}
-                className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-display font-bold uppercase tracking-widest overflow-hidden rounded-sm transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
+                className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-display font-bold uppercase tracking-widest overflow-hidden rounded-sm transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95"
               >
                 <span className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></span>
                 <span className="relative z-10 flex items-center gap-2 justify-center">
@@ -95,7 +101,7 @@ export default function Hero({ navigateTo }: HeroProps) {
               
               <button 
                 onClick={() => navigateTo('schedule')}
-                className="px-8 py-4 border border-white/20 hover:border-white/50 hover:bg-white/10 text-white font-display font-bold uppercase tracking-widest transition-all rounded-sm backdrop-blur-md bg-black/40"
+                className="px-8 py-4 border border-white/20 hover:border-white/50 hover:bg-white/10 text-white font-display font-bold uppercase tracking-widest transition-all rounded-sm backdrop-blur-md bg-black/40 active:scale-95"
               >
                 2026 Schedule
               </button>

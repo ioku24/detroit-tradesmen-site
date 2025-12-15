@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SectionHeading } from '../shared/Components';
 import { Calendar, Clock, MapPin, CheckCircle, AlertCircle, Loader2, ArrowRight, Mail } from 'lucide-react';
@@ -46,7 +45,7 @@ ${formData.message}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Info Side */}
           <div>
-            <SectionHeading title="Join The Club" subtitle="Forged in Detroit" />
+            <SectionHeading title="Join The Club" subtitle="Built in Detroit" />
             
             <p className="text-xl text-white font-light mb-8">
               Start showing up to the trainings below and we'll help you out from there! We also have season based dues which are collected before the first match of every season.

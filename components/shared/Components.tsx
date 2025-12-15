@@ -1,5 +1,4 @@
-
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { ChevronRight, LucideIcon } from 'lucide-react';
 import { Page } from '../../lib/types';
 
@@ -89,3 +88,68 @@ export function PlaceholderPage({ title, navigateTo }: { title: string, navigate
     </div>
   );
 }
+
+// --- ANIMATION COMPONENT ---
+
+interface RevealOnScrollProps {
+  children?: ReactNode;
+  className?: string;
+  delay?: number; // Delay in ms
+  threshold?: number; // Intersection threshold (0-1)
+  direction?: 'up' | 'left' | 'right' | 'none'; // Direction of slide
+}
+
+export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({ 
+  children, 
+  className = '', 
+  delay = 0, 
+  threshold = 0.1,
+  direction = 'up' 
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Only animate once
+        }
+      },
+      { threshold }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  // Animation Classes based on "Industrial Kinetic" style
+  // Using snappy easings and standard tailwindcss-animate utilities
+  const getAnimationClass = () => {
+    if (!isVisible) return 'opacity-0 translate-y-4'; // Start state (slightly offset)
+    
+    let base = 'animate-in fade-in duration-700 ease-out fill-mode-both';
+    
+    switch (direction) {
+      case 'up': return `${base} slide-in-from-bottom-8`;
+      case 'left': return `${base} slide-in-from-left-8`;
+      case 'right': return `${base} slide-in-from-right-8`;
+      case 'none': return `${base}`;
+      default: return `${base} slide-in-from-bottom-8`;
+    }
+  };
+
+  return (
+    <div
+      ref={ref}
+      className={`${getAnimationClass()} ${className}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
