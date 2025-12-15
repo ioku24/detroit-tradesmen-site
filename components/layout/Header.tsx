@@ -31,22 +31,22 @@ export default function Header({ navigateTo, isScrolled }: HeaderProps) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled || mobileMenuOpen 
           ? 'bg-[#0d1117]/95 backdrop-blur-md border-white/10 py-3' 
-          : 'bg-transparent border-transparent py-5'
+          : 'bg-transparent border-transparent py-3 lg:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div 
-            className="flex items-center gap-3 cursor-pointer group"
+            className="flex items-center gap-2 lg:gap-3 cursor-pointer group"
             onClick={() => handleNav('home')}
           >
             <img 
               src="https://ik.imagekit.io/fukntosc3/Tradesmen%20logo%20%20(1).svg" 
               alt="Detroit Tradesmen Logo" 
-              className="h-14 w-auto object-contain group-hover:scale-105 transition-transform" 
+              className="h-10 lg:h-14 w-auto object-contain group-hover:scale-105 transition-transform" 
             />
-            <span className="font-display font-bold text-2xl tracking-tighter italic uppercase text-white">
+            <span className="font-display font-bold text-xl lg:text-2xl tracking-tighter italic uppercase text-white">
               Detroit <span className="text-blue-500">Tradesmen</span>
             </span>
           </div>
@@ -82,7 +82,7 @@ export default function Header({ navigateTo, isScrolled }: HeaderProps) {
             className="lg:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>

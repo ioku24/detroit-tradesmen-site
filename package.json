@@ -1,13 +1,14 @@
+
 {
   "name": "detroit-tradesman-rugby",
   "version": "0.1.0",
   "private": true,
   "description": "Official website for Detroit Tradesmen RFC",
   "scripts": {
-    "dev": "next dev",
+    "dev": "vite",
     "build": "vite build",
-    "start": "next start",
-    "lint": "next lint"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -18,7 +19,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.561.0",
-    "next": "^16.0.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.68.0",
@@ -30,13 +30,12 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.0.1",
     "eslint": "^9.39.2",
-    "eslint-config-next": "^16.0.10",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.2.1"
+    "vite": "^5.0.0"
   }
 }

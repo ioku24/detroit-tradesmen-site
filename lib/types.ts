@@ -46,6 +46,7 @@ export interface Sponsor {
   image?: string; // Path to logo image
   tier: 'legacy' | 'season' | 'game-day';
   backgroundColor?: string; // Optional hex code for logo background if needed (e.g. for white logos)
+  url?: string; // External link to sponsor site
 }
 
 export interface NewsItem {

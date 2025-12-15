@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ navigateTo }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center bg-[#0a0f1c] overflow-hidden pt-20 lg:pt-0">
+    <section className="relative min-h-screen flex items-start lg:items-center bg-[#0a0f1c] overflow-hidden pt-28 lg:pt-0">
       {/* 1. Industrial Gritty Texture Overlay */}
       <div 
         className="absolute inset-0 opacity-40 mix-blend-overlay z-0 pointer-events-none"
@@ -22,8 +22,8 @@ export default function Hero({ navigateTo }: HeroProps) {
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 z-0"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 z-0"></div>
       
-      {/* 3. "MOTOR CITY" Watermark - Fills the top negative space */}
-      <div className="absolute top-[15%] lg:top-[10%] left-0 w-full overflow-hidden z-0 pointer-events-none select-none">
+      {/* 3. "MOTOR CITY" Watermark - Adjusted position for mobile */}
+      <div className="absolute top-24 lg:top-[10%] left-0 w-full overflow-hidden z-0 pointer-events-none select-none">
         <span 
           className="font-display font-black text-[18vw] lg:text-[15vw] leading-none text-transparent whitespace-nowrap pl-4 opacity-10"
           style={{ WebkitTextStroke: '2px rgba(255, 255, 255, 0.5)' }}
@@ -38,7 +38,7 @@ export default function Hero({ navigateTo }: HeroProps) {
       </div>
 
       {/* 5. Hero Image (Absolute Positioned for Overlay Effect) */}
-      <div className="absolute bottom-0 right-0 w-full h-[60%] lg:w-[85%] lg:h-[135%] lg:right-[-5%] z-0 pointer-events-none select-none flex items-end justify-end">
+      <div className="absolute bottom-0 right-0 w-full h-[55%] lg:w-[85%] lg:h-[135%] lg:right-[-5%] z-0 pointer-events-none select-none flex items-end justify-end">
         <div className="relative w-full h-full">
            <img 
             src="https://ik.imagekit.io/fukntosc3/Hero%20photo.png?updatedAt=1765787312434" 
@@ -52,8 +52,12 @@ export default function Hero({ navigateTo }: HeroProps) {
             "
           />
           {/* Gradients to ensure text readability over the image */}
+          {/* Left/Side gradient for text readability */}
           <div className="absolute inset-y-0 left-0 w-full lg:w-1/3 bg-gradient-to-t lg:bg-gradient-to-r from-[#0a0f1c] via-[#0a0f1c]/60 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0f1c] via-[#0a0f1c] to-transparent"></div>
+          
+          {/* Bottom gradient - Optimized for Mobile visibility */}
+          {/* Mobile: Short clean fade (h-20) to show feet. Desktop: Taller fade (h-48) for balance. */}
+          <div className="absolute bottom-0 left-0 right-0 h-20 lg:h-48 bg-gradient-to-t from-[#0a0f1c] to-transparent"></div>
         </div>
       </div>
 

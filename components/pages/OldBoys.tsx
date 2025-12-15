@@ -15,7 +15,7 @@ export default function OldBoys() {
   };
 
   return (
-    <div className="pt-32 pb-20 bg-[#0d1117] min-h-screen">
+    <div className="pt-24 lg:pt-32 pb-20 bg-[#0d1117] min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Intro */}

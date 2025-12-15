@@ -150,10 +150,35 @@ export const HALL_OF_FAME: HallOfFamer[] = [
 ];
 
 export const SPONSORS: Sponsor[] = [
-  { name: "Intex", logo: "INTEX", image: "https://ik.imagekit.io/fukntosc3/Intex.svg", tier: 'legacy' },
-  { name: "Narens Associates", logo: "NAI", image: "https://ik.imagekit.io/fukntosc3/Nai.svg", tier: 'legacy' },
-  { name: "Plymouth Physical Therapy Specialists", logo: "PPT", image: "https://ik.imagekit.io/fukntosc3/Plymouth%20PTS%20logo.svg", tier: 'season' },
-  { name: "Uniq Cannabis", logo: "UNIQ", image: "https://ik.imagekit.io/fukntosc3/uniq%20logo%20white.svg", tier: 'season', backgroundColor: '#1a2a4a' }
+  { 
+    name: "Intex", 
+    logo: "INTEX", 
+    image: "https://ik.imagekit.io/fukntosc3/Intex.svg", 
+    tier: 'legacy',
+    url: "https://www.intlextrusion.com"
+  },
+  { 
+    name: "Narens Associates", 
+    logo: "NAI", 
+    image: "https://ik.imagekit.io/fukntosc3/Nai.svg", 
+    tier: 'legacy',
+    url: "https://narens.com"
+  },
+  { 
+    name: "Plymouth Physical Therapy Specialists", 
+    logo: "PPT", 
+    image: "https://ik.imagekit.io/fukntosc3/Plymouth%20PTS%20logo.svg", 
+    tier: 'season',
+    url: "https://plymouthpts.com"
+  },
+  { 
+    name: "Uniq Cannabis", 
+    logo: "UNIQ", 
+    image: "https://ik.imagekit.io/fukntosc3/uniq%20logo%20white.svg", 
+    tier: 'season', 
+    backgroundColor: '#1a2a4a',
+    url: "https://uniqcannabis.com"
+  }
 ];
 
 export const NEWS: NewsItem[] = [

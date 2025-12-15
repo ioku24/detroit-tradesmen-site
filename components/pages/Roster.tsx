@@ -58,7 +58,7 @@ export default function Roster() {
   );
 
   return (
-    <div className="pt-32 pb-20 bg-[#0d1117] min-h-screen">
+    <div className="pt-24 lg:pt-32 pb-20 bg-[#0d1117] min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-10">
           <SectionHeading title="Meet The Team" subtitle="2026 Squad" centered />

@@ -21,7 +21,7 @@ export default function News() {
 
   if (selectedArticle) {
     return (
-      <div className="pt-32 pb-20 bg-[#0d1117] min-h-screen">
+      <div className="pt-24 lg:pt-32 pb-20 bg-[#0d1117] min-h-screen">
         <div className="max-w-4xl mx-auto px-4">
           <button 
             onClick={handleBack}
@@ -88,7 +88,7 @@ export default function News() {
 
   // Main List View
   return (
-    <div className="pt-32 pb-20 bg-[#0d1117] min-h-screen">
+    <div className="pt-24 lg:pt-32 pb-20 bg-[#0d1117] min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         <SectionHeading title="Latest News" subtitle="Club Announcements & Updates" centered />
 

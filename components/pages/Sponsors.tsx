@@ -40,7 +40,7 @@ ${formData.message}
   };
 
   return (
-    <div className="pt-32 pb-20 bg-[#0d1117] min-h-screen">
+    <div className="pt-24 lg:pt-32 pb-20 bg-[#0d1117] min-h-screen">
       <div className="max-w-7xl mx-auto px-4">
         
         <div className="text-center mb-16 max-w-4xl mx-auto">
@@ -54,7 +54,10 @@ ${formData.message}
         {/* Current Sponsors Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
           {SPONSORS.map((sponsor, i) => (
-            <div 
+            <a 
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
               key={i} 
               className={`rounded-lg p-8 flex items-center justify-center h-40 hover:scale-105 transition-transform shadow-lg group ${sponsor.backgroundColor ? '' : 'bg-white'}`}
               style={{ backgroundColor: sponsor.backgroundColor }}
@@ -63,12 +66,12 @@ ${formData.message}
                 <img 
                   src={sponsor.image.startsWith('http') ? sponsor.image : `/${sponsor.image}`} 
                   alt={sponsor.name} 
-                  className="max-h-full max-w-full object-contain filter group-hover:brightness-110 transition-all"
+                  className="max-h-full max-w-full object-contain group-hover:brightness-110 transition-all"
                 />
               ) : (
                 <span className="text-slate-800 font-display font-bold text-xl uppercase text-center">{sponsor.name}</span>
               )}
-            </div>
+            </a>
           ))}
         </div>
 

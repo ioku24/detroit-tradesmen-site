@@ -1,7 +1,38 @@
 
 # Website Management Guide
 
-This document outlines how to save your code to GitHub and deploy it to the live internet using Vercel.
+This document outlines how to save your code to GitHub, deploy it to the live internet using Vercel, and collaborate with others.
+
+## Architecture Note
+**This is a Vite + React project.** 
+It does NOT use Next.js. Vercel should automatically detect "Vite" as the framework.
+
+---
+
+## ⚡ The Smooth Sync Process (Use this daily)
+
+Every time we make changes to the code here, follow these exact 3 steps in your terminal to update the live site:
+
+### 1. Check & Stage
+See what files changed, then stage them all for saving.
+```bash
+git status
+git add .
+```
+
+### 2. Commit (Save)
+Wrap the changes in a named "package" (commit). Replace "Update details" with a short description of what you did.
+```bash
+git commit -m "Update details"
+```
+
+### 3. Push (Deploy)
+Send the code to GitHub. **Vercel will see this and automatically update the live site.**
+```bash
+git push
+```
+
+*Note: After running `git push`, wait about 60-90 seconds, and your live URL will be updated.*
 
 ---
 
@@ -35,37 +66,28 @@ git push -u origin main
 1. Go to [vercel.com](https://vercel.com) and log in with GitHub.
 2. Click **Add New...** > **Project**.
 3. Select the `detroit-tradesmen-site` repository you just created.
-4. Click **Deploy**.
-5. Wait ~2 minutes. Your site is now live!
+4. **Framework Preset**: Ensure this says **Vite** (It should auto-detect).
+5. **Output Directory**: Ensure this is `dist`.
+6. Click **Deploy**.
 
 ---
 
-## Phase 3: How to Update Your Site (The Routine)
+## Phase 3: Collaborating
 
-Whenever you (or I) make changes to the code, follow these steps to update the live website:
+### Method A: The "Easy" Way (For quick text/roster updates)
+*Best for updating the Roster, Schedule, or News without installing software.*
 
-### 1. Make Changes
-*   Ask me to update the roster, change a photo, or add a news article.
-*   I will generate the code changes.
+1.  Go to your repository on **GitHub.com**.
+2.  Navigate to the file `lib/data.ts`.
+3.  Click the **Pencil Icon** (Edit this file) in the top right corner.
+4.  Make your changes to the text.
+5.  Click **Commit changes...** (top right), type a message, and click the green **Commit changes** button.
+6.  **Vercel will automatically detect this change and update the live site in about 1 minute.**
 
-### 2. Save & Push
-Run these three commands in your terminal:
-
-```bash
-# 1. Stage the changes
-git add .
-
-# 2. Save them with a message describing what you did
-git commit -m "Updated roster photos"
-
-# 3. Send them to the cloud
-git push
-```
-
-### 3. Done!
-*   Vercel will detect the `git push`.
-*   It will automatically rebuild your website.
-*   The changes will be live in about 60 seconds.
+### Method B: The "Developer" Way (For design changes)
+1.  **Make Changes**: I (the AI) generate code changes.
+2.  **Sync**: Run the "Smooth Sync Process" (git add, git commit, git push).
+3.  **Done**: Vercel rebuilds the site automatically.
 
 ---
 
@@ -77,4 +99,5 @@ git push
 | `git add .` | Prepares all changed files to be saved. |
 | `git commit -m "message"` | Saves the changes with a note. |
 | `git push` | Uploads the saved changes to GitHub (triggers Vercel). |
-| `npm run dev` | Starts the local preview server to see changes before pushing. |
+| `npm run dev` | Starts the local preview server (Vite) to see changes before pushing. |
+| `npm run build` | Builds the project for production (Vite Build). |
