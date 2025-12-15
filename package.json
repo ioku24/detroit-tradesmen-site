@@ -5,7 +5,7 @@
   "description": "Official website for Detroit Tradesmen RFC",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "vite build",
     "start": "next start",
     "lint": "next lint"
   },
